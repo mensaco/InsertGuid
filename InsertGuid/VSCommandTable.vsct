@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="InsertGuid">
+    <Groups>
+      <Group guid="InsertGuid" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="VSMainMenu" id="Edit"/>
+      </Group>
+    </Groups>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="InsertGuid" id="MyInsertGuidCommand" priority="0x0100" type="Button">
+        <Parent guid="InsertGuid" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="PasteReplace" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Insert Guid</ButtonText>
+          <LocCanonicalName>.Edit.InsertGuid</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="InsertGuid" value="{3697e2d9-cd84-4f9d-97eb-f28f8462f051}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="MyInsertGuidCommand" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
